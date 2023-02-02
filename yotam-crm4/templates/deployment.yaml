@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: crm
+  name: crm
+spec:
+  replicas: {{ .Values.deployment.replicaCount }}
+  selector:
+    matchLabels:
+      app: crm
+  template:
+    metadata:
+      labels:
+        app: crm
+    spec:
+      containers:
+      - image: {{ .Values.deployment.containerImage }}
+        name: demo-crm
+        ports:
+        - containerPort: {{ .Values.deployment.appContainerPort }}
+          protocol: TCP
+        envFrom:
+        - configMapRef:
+            name: myconf
+        resources:
+{{  toYaml .Values.resources | indent 10 }}

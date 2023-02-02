@@ -1,0 +1,69 @@
+# Default values for yotam-crm4.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+
+
+deployment:
+  replicaCount: 2
+  containerImage: gcr.io/luminous-bond-375707/yotam-halperin@sha256:6d888e7ee539b53e02dad10e43f51f9a314b111dd86f535d85d35bef6da0050b
+  appContainerPort: 3000
+
+
+# secure DEMO-CRM
+tls:
+  enabled: true
+
+# job template to destroy notes
+destroyer:
+  enabled: true
+
+### main service between app to ingress
+service:
+  name: crm
+  applicationPort: 80
+  conPort: 3000
+
+
+### mongodb database
+mongodb:
+  ## @param architecture MongoDB(&reg;) architecture (`standalone` or `replicaset`)
+  architecture: replicaset
+  useStatefulSet: false
+  auth:
+    ## @param auth.enabled Enable authentication
+    enabled: true
+    ## @param auth.rootUser MongoDB(&reg;) root user
+    rootUser: root
+    ## @param auth.rootPassword MongoDB(&reg;) root password
+    rootPassword: root
+  replicaCount: 3
+
+ingress:
+  enabled: false
+  className: "nginx"
+  domain: yotamh.zapto.org
+  secretNameCertificate: crm-tls
+
+clusterissuer:
+  name: letsencrypt-issuer
+
+
+cert-manager:
+  enabled: true
+  installCRDs: false
+  namespace: default
+
+
+resources: {
+  limits: {
+    cpu: 64m,
+    memory: 150Mi
+  },  
+  requests: {
+      cpu: 32m,
+      memory: 75Mi
+  }
+  
+}
+  
