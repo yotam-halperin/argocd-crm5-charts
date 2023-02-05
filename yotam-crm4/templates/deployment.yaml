@@ -21,10 +21,21 @@ spec:
         ports:
         - containerPort: {{ .Values.deployment.appContainerPort }}
           protocol: TCP
-        envFrom:
-        - configMapRef:
-            name: myconf
-        - secretRef:
-            name: mysecret
+        env:
+        - name: LOG_LEVEL
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: LOG_LEVEL
+        - name: PERSISTENCE
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: PERSISTENCE
+        - name: MONGODB_URI
+          valueFrom:
+            configMapKeyRef:
+              name: myconf
+              key: MONGODB_URI
         resources:
 {{  toYaml .Values.resources | indent 10 }}
