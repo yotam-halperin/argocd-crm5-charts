@@ -10,6 +10,8 @@ deployment:
   appContainerPort: 3000
 
 
+namespace: default
+
 # secure DEMO-CRM
 tls:
   enabled: true
