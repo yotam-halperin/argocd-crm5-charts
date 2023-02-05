@@ -44,7 +44,7 @@ mongodb:
 ingress:
   enabled: false
   className: "nginxapp"
-  domain: yotam.zapto.org
+  domain: yotama.zapto.org
   secretNameCertificate: crm-tls
 
 clusterissuer:
