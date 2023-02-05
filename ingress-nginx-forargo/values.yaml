@@ -95,7 +95,7 @@ controller:
     enabled: true
     ports:
       # -- 'hostPort' http port
-      http: 8081
+      http: 80
       # -- 'hostPort' https port
       https: 443
 
@@ -106,7 +106,7 @@ controller:
   ## IngressClass resources are supported since k8s >= 1.18 and required since k8s >= 1.19
   ingressClassResource:
     # -- Name of the ingressClass
-    name: nginxapp
+    name: nginx
     # -- Is this ingressClass enabled or not
     enabled: true
     # -- Is this the default ingressClass for the cluster
@@ -121,7 +121,7 @@ controller:
 
   # -- For backwards compatibility with ingress.class annotation, use ingressClass.
   # Algorithm is as follows, first ingressClassName is considered, if not present, controller looks for ingress.class annotation
-  ingressClass: nginxapp
+  ingressClass: nginx
 
   # -- Labels to add to the pod container metadata
   podLabels: {}
@@ -498,7 +498,7 @@ controller:
       - IPv4
 
     ports:
-      http: 8081
+      http: 80
       https: 443
 
     targetPorts:
@@ -920,7 +920,7 @@ defaultBackend:
 
     # loadBalancerIP: ""
     loadBalancerSourceRanges: []
-    servicePort: 8081
+    servicePort: 80
     type: ClusterIP
 
   priorityClassName: ""
