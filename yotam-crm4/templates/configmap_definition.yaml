@@ -4,4 +4,5 @@ metadata:
   name: myconf
   namespace: {{ .Values.namespace }}
 data:
+  LOG_LEVEL: "info"
   MONGODB_URI: "mongodb://{{ .Values.mongodb.auth.rootUser }}:{{ .Values.mongodb.auth.rootPassword }}@{{ .Release.Name }}-mongodb-headless"
