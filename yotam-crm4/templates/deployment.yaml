@@ -24,5 +24,8 @@ spec:
         envFrom:
         - configMapRef:
             name: myconf
+        envFrom:
+        - secretRef:
+            name: mysecret
         resources:
 {{  toYaml .Values.resources | indent 10 }}

@@ -5,5 +5,3 @@ metadata:
   namespace: {{ .Values.namespace }}
 data:
   MONGODB_URI: "mongodb://{{ .Values.mongodb.auth.rootUser }}:{{ .Values.mongodb.auth.rootPassword }}@{{ .Release.Name }}-mongodb-headless"
-  LOG_LEVEL: "info"
-  PERSISTENCE: "true"
