@@ -31,7 +31,7 @@ nameOverride: ""
 fullnameOverride: "sealed-secrets-controller"
 ## @param namespaceOverride String to fully override common.names.namespace
 ##
-namespaceOverride: ""
+namespaceOverride: "kube-system"
 ## @param commonLabels [object] Labels to add to all deployed objects
 ##
 commonLabels: {}
