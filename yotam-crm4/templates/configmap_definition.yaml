@@ -4,6 +4,6 @@ metadata:
   name: myconf
   namespace: {{ .Values.namespace }}
 data:
-  MONGODB_URI: "mongodb://{{ .Values.mongodb.auth.rootUser }}:{{ .Values.mongodb.auth.rootPassword }}@yotam-crm4-mongodb-headless"
+  MONGODB_URI: "mongodb://{{ .Values.mongodb.auth.rootUser }}:{{ .Values.mongodb.auth.rootPassword }}@{{ .Release.Name }}-mongodb-headless"
   LOG_LEVEL: "info"
   PERSISTENCE: "true"
