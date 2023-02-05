@@ -24,8 +24,8 @@ spec:
         env:
         - name: LOG_LEVEL
           valueFrom:
-            secretKeyRef:
-              name: mysecret
+            configMapKeyRef:
+              name: myconf
               key: LOG_LEVEL
         - name: PERSISTENCE
           valueFrom:
