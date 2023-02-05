@@ -42,19 +42,13 @@ mongodb:
   replicaCount: 3
 
 ingress:
-  enabled: false
+  enabled: true
   className: "nginx"
-  domain: yotamh.zapto.org
+  domain: yotamr.zapto.org
   secretNameCertificate: crm-tls
 
 clusterissuer:
   name: letsencrypt-issuer
-
-
-cert-manager:
-  enabled: true
-  installCRDs: false
-  namespace: default
 
 
 resources: {
