@@ -21,7 +21,7 @@ destroyer:
 ### main service between app to ingress
 service:
   name: crm
-  applicationPort: 80
+  applicationPort: 8081
   conPort: 3000
 
 
