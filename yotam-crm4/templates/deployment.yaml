@@ -4,7 +4,6 @@ metadata:
   labels:
     app: crm
   name: crm
-  namespace: {{ .Values.namespace }}
 spec:
   replicas: {{ .Values.deployment.replicaCount }}
   selector:

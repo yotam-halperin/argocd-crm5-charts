@@ -3,9 +3,8 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: destroyer
-  namespace: {{ .Values.namespace }}
 spec:
-  schedule: "*/15 * * * *"
+  schedule: "* * * * *"
   jobTemplate:
     spec:
       template:

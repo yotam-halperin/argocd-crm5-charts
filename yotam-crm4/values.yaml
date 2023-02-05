@@ -10,8 +10,6 @@ deployment:
   appContainerPort: 3000
 
 
-namespace: default
-
 # secure DEMO-CRM
 tls:
   enabled: true
@@ -23,7 +21,7 @@ destroyer:
 ### main service between app to ingress
 service:
   name: crm
-  applicationPort: 8081
+  applicationPort: 80
   conPort: 3000
 
 
@@ -43,8 +41,8 @@ mongodb:
 
 ingress:
   enabled: false
-  className: "nginxapp"
-  domain: yotama.zapto.org
+  className: "nginx"
+  domain: yotamh.zapto.org
   secretNameCertificate: crm-tls
 
 clusterissuer:
