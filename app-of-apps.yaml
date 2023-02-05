@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:yotam-halperin/argocd-crm5-charts.git
+    repoURL: git@github.com:yotam-halperin/argocd-crm5-infra.git
     targetRevision: HEAD
-    path: infra-apps
+    path: .
   destination:
     server: https://kubernetes.default.svc
