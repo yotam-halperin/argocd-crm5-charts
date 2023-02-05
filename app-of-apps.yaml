@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argoapp
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:yotam-halperin/argo-crm5-infrapps.git
+    targetRevision: HEAD
+    path: .
+  destination:
+    server: https://kubernetes.default.svc
