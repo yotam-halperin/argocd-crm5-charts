@@ -16,7 +16,7 @@ spec:
         app: crm
     spec:
       containers:
-      - image: {{ .Values.deployment.containerImage }}
+      - image: {{ .Values.image.name }}:{{ .Values.image.tag }}
         name: demo-crm
         ports:
         - containerPort: {{ .Values.deployment.appContainerPort }}
