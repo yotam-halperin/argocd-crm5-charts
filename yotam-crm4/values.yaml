@@ -10,7 +10,7 @@ deployment:
 
 image:
   name: gcr.io/luminous-bond-375707/yotam-halperin@sha256
-  tag: latest
+  tag: 1.0.0
 
 namespace: default
 
