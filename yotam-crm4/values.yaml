@@ -9,7 +9,7 @@ deployment:
   appContainerPort: 3000
 
 image:
-  name: gcr.io/luminous-bond-375707/yotam-halperin@sha256
+  name: gcr.io/luminous-bond-375707/yotam-halperin@sha256:6d888e7ee539b53e02dad10e43f51f9a314b111dd86f535d85d35bef6da0050b
   tag: 1.0.0
 
 namespace: default
